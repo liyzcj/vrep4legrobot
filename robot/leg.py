@@ -1,8 +1,8 @@
 __author__ = 'li yan zhe'
 
 import numpy as np
-from robot import robotdata
 from math import *
+import robotdata
 from vrep import vrep
 
 

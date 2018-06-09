@@ -1,7 +1,7 @@
 __author__ = 'li yan zhe'
 
 from robot import robotdata
-from robot.leg import Leg
+from leg import Leg
 from vrep import vrep
 
 

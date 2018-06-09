@@ -2,7 +2,7 @@ __author__ = 'li yan zhe'
 
 import math
 import time
-from robot import robotdata
+import robotdata
 import numpy
 from robot.transform import rotate_around_center, distance
 
