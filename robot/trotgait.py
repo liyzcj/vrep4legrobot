@@ -70,7 +70,6 @@ class Trotgait:
             rotated_position = self.get_rotated_leg_resting_positions(leg, angular_speed)
             leg.move_to_pos(*(rotated_position + offset))
 
-
     @staticmethod
     def get_rotated_leg_resting_positions(leg, dro):
         roting = rotate_around_center(leg.resting_position, "x", dro[0])
