@@ -94,7 +94,6 @@ class Controller:
         processed key inputs into dx ,dy, dz, dro values.
         :return:
         """
-        dx = 1
         if self.keyListener.get_key(119):
             dx = 1
         elif self.keyListener.get_key(115):
