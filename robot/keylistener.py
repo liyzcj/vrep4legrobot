@@ -30,7 +30,8 @@ class Keylistener:
         self.hm.KeyDown = self.pressed
         self.hm.KeyUp = self.released
         self.hm.HookKeyboard()
-        pythoncom.PumpMessages()
+        # t = threading.Thread(target=pythoncom.PumpMessages, name='LoopThread')
+        # t.start()
 
     def __del__(self):
         self.hm.UnhookKeyboard()
