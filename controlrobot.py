@@ -14,3 +14,10 @@ def run():
     global controller1
     while True:
         controller1.iterate()
+
+
+t = threading.Thread(target=run, name='LoopThread')
+
+t.start()
+print threading.enumerate()
+pythoncom.PumpMessages()
