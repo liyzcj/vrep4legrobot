@@ -1,4 +1,6 @@
-import time
+# import time
+import threading
+import pythoncom
 from robot import controller
 from robot import vreprobot
 
@@ -10,4 +12,5 @@ print("script ready!")
 
 def run():
     global controller1
-    controller1.iterate()
+    while True:
+        controller1.iterate()
