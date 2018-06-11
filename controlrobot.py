@@ -1,4 +1,3 @@
-# import time
 import threading
 import pythoncom
 from robot import controller
@@ -17,7 +16,6 @@ def run():
 
 
 t = threading.Thread(target=run, name='LoopThread')
-
 t.start()
-print threading.enumerate()
+threading.enumerate()
 pythoncom.PumpMessages()
