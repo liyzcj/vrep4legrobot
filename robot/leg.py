@@ -40,7 +40,7 @@ class Leg:
                 self.femurHandle = self.handles[key]
             elif "tibia" in key:
                 self.tibiaHandle = self.handles[key]
-        print(self.name, self.handles)
+        # print(self.name, self.handles)
 
         self.yDirection = -1 if "right" in self.name else 1
 
@@ -84,41 +84,6 @@ class Leg:
 
         except Exception as exc:
             print (exc)
-
-    def move_by(self, pos):
-        """
-        attempts to move it's foot my an offset of it's current position
-        """
-        target = self.position + pos
-        self.move_to_pos(*target)
-
-    def check_limits(self, shoulder_angle, femur_angle, tibia_angle):
-        """
-        Checks if the desired angles are inside the physically possible constraints.
-        """
-        shoulder_angle = degrees(shoulder_angle)
-        femur_angle = degrees(femur_angle)
-        tibia_angle = degrees(tibia_angle)
-
-        femur_servo_limits = robotdata.femurServoLimits
-        shoulder_servo_limits = robotdata.shoulderServoLimits
-        tibia_servo_limits = robotdata.tibiaServoLimits
-
-        if self.yDirection == -1:
-            shoulder_servo_limits = [-shoulder_servo_limits[1], -shoulder_servo_limits[0]]
-
-        if femur_angle < femur_servo_limits[0]:
-            raise Exception("femur out of bounds")
-        if femur_angle > femur_servo_limits[1]:
-            raise Exception("femur out of bounds")
-        if tibia_angle < tibia_servo_limits[0]:
-            raise Exception("tibia out of bounds")
-        if tibia_angle > tibia_servo_limits[1]:
-            raise Exception("tibia out of bounds")
-        if shoulder_angle < shoulder_servo_limits[0]:
-            raise Exception(self.name, ":shoulder out of bounds, attempted {0}".format(shoulder_angle))
-        if shoulder_angle > shoulder_servo_limits[1]:
-            raise Exception(self.name, ":shoulder out of bounds, attempted {0}".format(shoulder_angle))
 
     def move_to_angle(self, shoulder_angle, femur_angle, tibia_angle):
         """

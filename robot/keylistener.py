@@ -10,13 +10,9 @@ class Keylistener:
 
     def pressed(self, event):
         self.keyMap[event.Ascii] = True
-        # Debug
-        # print self.keyMap[event.Ascii]
 
     def released(self, event):
         self.keyMap[event.Ascii] = False
-        # Debug
-        # print self.keyMap[event.Ascii]
 
     def get_key(self, key):
         if key in self.keyMap:
@@ -29,13 +25,6 @@ class Keylistener:
         self.hm.KeyDown = self.pressed
         self.hm.KeyUp = self.released
         self.hm.HookKeyboard()
-        # t = threading.Thread(target=pythoncom.PumpMessages, name='LoopThread')
-        #         # t.start()
 
     def __del__(self):
         self.hm.UnhookKeyboard()
-
-
-# Debug
-# if __name__ == "__main__":
-#     Keylistener()

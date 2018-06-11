@@ -69,36 +69,3 @@ class Vreprobot:
         }
 
         return legs
-
-    def move_legs_to_angles(self, angles):
-        for leg in self.legs.items():
-            leg[1].move_to_angle(*angles)
-
-    @staticmethod
-    def read_feet():
-        return [0, 0, 0, 0]
-
-    def read_imu(self):
-        self.orientation[1] += 0.1
-        self.orientation[1] %= 30
-        return self.orientation
-
-    def move_leg_to_point(self, leg, x, y, z):
-        """
-        Move legs to absolute point.
-        :param leg: leg name to be moved
-        :param x: body relative x pos
-        :param y: body relative y pos
-        :param z: body relative z pos
-        :return:
-        """
-        try:
-            self.legs[leg].move_to_pos(x, y, z)
-        except Exception as exc:
-            print("out of bounds", exc)
-
-    def start(self):
-        pass
-
-    def disconnect(self):
-        pass
