@@ -1,5 +1,4 @@
 import pyHook
-import pythoncom
 
 
 class Keylistener:
@@ -31,12 +30,12 @@ class Keylistener:
         self.hm.KeyUp = self.released
         self.hm.HookKeyboard()
         # t = threading.Thread(target=pythoncom.PumpMessages, name='LoopThread')
-        # t.start()
+        #         # t.start()
 
     def __del__(self):
         self.hm.UnhookKeyboard()
 
 
 # Debug
-if __name__ == "__main__":
-    Keylistener()
+# if __name__ == "__main__":
+#     Keylistener()
