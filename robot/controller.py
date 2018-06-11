@@ -115,9 +115,9 @@ class Controller:
         if self.keyListener.get_key(116):
             self.dx = self.dy = self.dz = self.dro[2] = 0
         if self.keyListener.get_key(113):
-            self.dro[2] += 0.006
-        elif self.keyListener.get_key(101):
             self.dro[2] -= 0.006
+        elif self.keyListener.get_key(101):
+            self.dro[2] += 0.006
 
         if self.keyListener.get_key(49):
             self.robot.disconnect()
