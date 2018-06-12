@@ -26,7 +26,7 @@ class Trotgait:
 
     def height_at_progression(self, pro):
         """
-        returns the foot height at prog[0-1] of the foot movement overall
+        returns the foot height at pro[0-1] of the foot movement overall
         """
         index = math.floor(pro * self.z_points)
         diff = pro * self.z_points - index
@@ -47,7 +47,7 @@ class Trotgait:
             linear_speed[0] ** 2 + linear_speed[1] ** 2 + linear_speed[2] ** 2) + rotational_distance
         self.currentDistance = (self.currentDistance + this_distance) % self.stepDistance
 
-        # current feet height depends on distance (maybe should depend on time? )
+        # current feet height depends on distance
         step_progression = self.currentDistance / self.stepDistance
         step_progression_alternate = (step_progression + 0.5) % 1.0
 
