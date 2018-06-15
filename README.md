@@ -13,3 +13,4 @@ Use python to implement to control 4 legs simulated robot on V-REP！
 ## Notes
 
 - a bug in pyHook
+One function will be error in pyHook, which the **argument is "msg", replace it with "int(str(msg))"**
